@@ -1,0 +1,5 @@
+#define SPROUT_VERSION "${TAG_AND_BUILD_STRING}"
+#define SOFTWARE_NAME  "${SOFTWARE_NAME}"
+
+#define VERSION_STRING  \
+    "${SOFTWARE_NAME} ${SPROUT_VERSION}\nCopyright(C) 2023 ${LICENSE_HOLDER} all rights reserved."
