@@ -1,5 +1,5 @@
 # cmakeの最小バージョンを指定
-cmake_minimum_required( VERSION 3.25.1 )
+cmake_minimum_required( VERSION 3.22.1 )
 
 # プロジェクト名と使用する言語を指定
 project( violet CXX )
