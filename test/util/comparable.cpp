@@ -57,28 +57,28 @@ BOOST_AUTO_TEST_CASE( test_compare_correctness ) {
   IntClass minimum(0), non_minimum(1);
 
   // 左側が小さいパターン
-  BOOST_CHECK( minimum < non_minimum == 1 );
-  BOOST_CHECK( minimum > non_minimum == 0 );
-  BOOST_CHECK( minimum <= non_minimum == 1 );
-  BOOST_CHECK( minimum >= non_minimum == 0 );
-  BOOST_CHECK( minimum == non_minimum == 0 );
-  BOOST_CHECK( minimum != non_minimum == 1 );
+  BOOST_CHECK( ( minimum < non_minimum ) == 1 );
+  BOOST_CHECK( ( minimum > non_minimum ) == 0 );
+  BOOST_CHECK( ( minimum <= non_minimum ) == 1 );
+  BOOST_CHECK( ( minimum >= non_minimum ) == 0 );
+  BOOST_CHECK( ( minimum == non_minimum ) == 0 );
+  BOOST_CHECK( ( minimum != non_minimum ) == 1 );
 
   // 左側が小さくないパターン
-  BOOST_CHECK( non_minimum < non_minimum == 0 );
-  BOOST_CHECK( non_minimum > non_minimum == 0 );
-  BOOST_CHECK( non_minimum <= non_minimum == 1 );
-  BOOST_CHECK( non_minimum >= non_minimum == 1 );
-  BOOST_CHECK( non_minimum == non_minimum == 1 );
-  BOOST_CHECK( non_minimum != non_minimum == 0 );
+  BOOST_CHECK( ( non_minimum < non_minimum ) == 0 );
+  BOOST_CHECK( ( non_minimum > non_minimum ) == 0 );
+  BOOST_CHECK( ( non_minimum <= non_minimum ) == 1 );
+  BOOST_CHECK( ( non_minimum >= non_minimum ) == 1 );
+  BOOST_CHECK( ( non_minimum == non_minimum ) == 1 );
+  BOOST_CHECK( ( non_minimum != non_minimum ) == 0 );
 
   // 左側が大きいパターン
-  BOOST_CHECK( non_minimum < minimum == 0 );
-  BOOST_CHECK( non_minimum > minimum == 1 );
-  BOOST_CHECK( non_minimum <= minimum == 0 );
-  BOOST_CHECK( non_minimum >= minimum == 1 );
-  BOOST_CHECK( non_minimum == minimum == 0 );
-  BOOST_CHECK( non_minimum != minimum == 1 );
+  BOOST_CHECK( ( non_minimum < minimum ) == 0 );
+  BOOST_CHECK( ( non_minimum > minimum ) == 1 );
+  BOOST_CHECK( ( non_minimum <= minimum ) == 0 );
+  BOOST_CHECK( ( non_minimum >= minimum ) == 1 );
+  BOOST_CHECK( ( non_minimum == minimum ) == 0 );
+  BOOST_CHECK( ( non_minimum != minimum ) == 1 );
 }
 
 BOOST_AUTO_TEST_SUITE_END()
