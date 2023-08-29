@@ -6,6 +6,8 @@ set( DIRECTORY_REGEX ".+/" )
 
 set( INCLUDE_DIRECTORY ${PROJECT_SOURCE_DIR} )
 
+include( ${PROJECT_SOURCE_DIR}/cmake/compile_option.cmake )
+
 ##############################
 ## テストケースを追加するための関数
 ##############################
@@ -22,12 +24,7 @@ function( create_test_case TEST_SOURCE_RELATIVE_PATH )
   target_include_directories( ${TEST_NAME} PUBLIC ${INCLUDE_DIRECTORY} )
 
   # コンパイルフラグを追加
-  target_compile_options( ${TEST_NAME} PUBLIC
-    -Wall
-    -target x86_64-w64-windows-gnu)
-
-  # C++標準規格の指定 cxx_std_20はcmake3.12以降で指定可能
-  target_compile_features( ${TEST_NAME} PUBLIC cxx_std_20 )
+  add_compile_option( ${TEST_NAME} )
 
   target_compile_definitions( ${TEST_NAME} PUBLIC BOOST_TEST_NO_LIB=1 )
 

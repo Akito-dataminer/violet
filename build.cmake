@@ -6,8 +6,12 @@ if( NOT EXISTS ${build_dir} )
   file( MAKE_DIRECTORY ${build_dir} )
 endif()
 
+if( NOT DEFINED slib )
+  set( slib libstdc++ )
+endif()
+
 execute_process(
-  COMMAND ${CMAKE_COMMAND} .. -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+  COMMAND ${CMAKE_COMMAND} .. -DCMAKE_BUILD_TYPE=${BUILD_TYPE} -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -Dslib=${slib}
   WORKING_DIRECTORY ${build_dir}
 )
 
