@@ -21,7 +21,7 @@ class IntClass : public COMPARABLE::CompDef<IntClass> {
 private:
   int i_;
 public:
-  IntClass( int const i ) : util::COMPARABLE::CompDef<IntClass>(), i_( i ) {}
+  consteval IntClass( int const i ) : util::COMPARABLE::CompDef<IntClass>(), i_( i ) {}
 
   friend bool operator < ( IntClass const & i1, IntClass const & i2 ) noexcept { return( i1.i_ < i2.i_ ); }
 };
@@ -34,7 +34,7 @@ public:
 class LTReturnNONbool : COMPARABLE::CompDef<LTReturnNONbool> {
 public:
   // 間違った戻り値指定
-  friend std::string operator < ( LTReturnNONbool const & nonb1, LTReturnNONbool const & nonb2 ) noexcept { return( "operator" ); }
+  friend std::string operator < ( [[maybe_unused]]LTReturnNONbool const & nonb1, [[maybe_unused]]LTReturnNONbool const & nonb2 ) noexcept { return( "operator" ); }
 };
 
 BOOST_AUTO_TEST_CASE( test_compare_assert ) {
