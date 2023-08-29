@@ -34,7 +34,7 @@ public:
 class LTReturnNONbool : COMPARABLE::CompDef<LTReturnNONbool> {
 public:
   // 間違った戻り値指定
-  friend std::string operator < ( LTReturnNONbool const & nonb1, LTReturnNONbool const & nonb2 ) noexcept { return( "operator" ); }
+  friend std::string operator < ( [[maybe_unused]]LTReturnNONbool const & nonb1, [[maybe_unused]]LTReturnNONbool const & nonb2 ) noexcept { return( "operator" ); }
 };
 
 BOOST_AUTO_TEST_CASE( test_compare_assert ) {
