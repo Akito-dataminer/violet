@@ -21,7 +21,7 @@ class IntClass : public COMPARABLE::CompDef<IntClass> {
 private:
   int i_;
 public:
-  IntClass( int const i ) : util::COMPARABLE::CompDef<IntClass>(), i_( i ) {}
+  consteval IntClass( int const i ) : util::COMPARABLE::CompDef<IntClass>(), i_( i ) {}
 
   friend bool operator < ( IntClass const & i1, IntClass const & i2 ) noexcept { return( i1.i_ < i2.i_ ); }
 };
